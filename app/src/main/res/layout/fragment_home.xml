@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Total Balance Label -->
+            <TextView
+                android:id="@+id/text_total_balance_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_balance"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Total Balance Value (Large & Centered) -->
+            <TextView
+                android:id="@+id/textTotalBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0_00__"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:textColor="?android:textColorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/text_total_balance_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp" />
+
+            <!-- Vertical Guideline for Splitting Left and Right -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <!-- Total Income -->
+            <TextView
+                android:id="@+id/text_total_income_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/income"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/textTotalBalance"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="32dp" />
+
+            <TextView
+                android:id="@+id/textTotalIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0_00"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/text_total_income_label"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="4dp" />
+
+            <!-- Total Expense -->
+            <TextView
+                android:id="@+id/text_total_expense_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expense"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="@id/text_total_income_label"
+                app:layout_constraintStart_toStartOf="@id/guidelineCenter"
+                android:layout_marginStart="16dp" />
+
+            <TextView
+                android:id="@+id/textTotalExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0_00_"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/text_total_expense_label"
+                app:layout_constraintStart_toStartOf="@id/text_total_expense_label"
+                android:layout_marginTop="4dp" />
+
+            <!-- Bar Chart -->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/homeBarChart"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@id/textTotalIncome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Budget Progress Label -->
+            <TextView
+                android:id="@+id/text_budget_progress_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/budget_progress"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintTop_toBottomOf="@id/homeBarChart"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="32dp" />
+
+            <!-- Styled Horizontal Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBudget"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="16dp"
+                android:progress="0"
+                android:max="100"
+                android:progressDrawable="@drawable/rounded_progress"
+                app:layout_constraintTop_toBottomOf="@id/text_budget_progress_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <!-- Budget Progress Percentage and Amount -->
+            <TextView
+                android:id="@+id/textBudgetProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintTop_toBottomOf="@id/progressBudget"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/textBudgetDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0_00_0_00"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintTop_toBottomOf="@id/progressBudget"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
