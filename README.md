@@ -1,4 +1,4 @@
-# 📱 BalanZ – Personal Finance Tracker
+# 📱 BalanZ – Personal Finance Tracker App
 
 **BalanZ** is a modern personal finance management Android application built using **Kotlin**, designed to help users track income, expenses, and daily spending behavior in a secure and intuitive interface. Whether you're budgeting or reviewing your financial goals, BalanZ provides the insights you need.
 
@@ -7,8 +7,8 @@
 ## ✨ Features
 
 - 🔐 **Secure Access**
-  - AES-256 PIN authentication using EncryptedSharedPreferences
-  - Session management for enhanced security
+  - AES-256 PIN authentication using EncryptedSharedPreferences.
+  - Session management for enhanced security.
 
 - 📊 **Finance Tracking**
   - Add, edit, delete transactions with categories (income/expense)
