@@ -40,5 +40,6 @@
 | Security    | EncryptedSharedPreferences (AES)   |
 | Navigation  | FragmentManager, BottomNavBar      |
 
+
 ---
 
